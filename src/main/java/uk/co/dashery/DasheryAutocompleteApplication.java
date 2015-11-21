@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
@@ -21,7 +22,7 @@ public class DasheryAutocompleteApplication {
     private TokenRepository tokenRepository;
 
     @CrossOrigin
-    @RequestMapping("/tokens")
+    @RequestMapping(value = "/tokens", method = RequestMethod.GET)
     public List<Token> tokens() {
         return tokenRepository.findAll();
     }
