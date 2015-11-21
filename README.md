@@ -5,7 +5,7 @@
 Provides tokens for Dashery's autocomplete.
 
 ## Usage
-Call the */tokens/autocomplete* endpoint to be given a JSON list of tokens with two attributes: category, and value.
+GET the */tokens/autocomplete* endpoint to be given a JSON list of tokens with two attributes: category, and value.
 
 ## Deployment
 
