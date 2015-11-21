@@ -22,7 +22,7 @@ public class DasheryAutocompleteApplication {
     private TokenRepository tokenRepository;
 
     @CrossOrigin
-    @RequestMapping(value = "/tokens", method = RequestMethod.GET)
+    @RequestMapping(value = "/tokens/autocomplete", method = RequestMethod.GET)
     public List<Token> tokens() {
         return tokenRepository.findAll();
     }
