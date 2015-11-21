@@ -6,7 +6,7 @@ Provides tokens for Dashery's autocomplete.
 
 ## Deployment
 
-Standard Spring Boot deployment.  Requires the following properties to be present in the environment, wether via yml/properties file or environment variable:
+Standard Spring Boot deployment.  Requires the following properties to be present in the environment, whether via yml/properties file or environment variable:
 
 ```
 spring:
