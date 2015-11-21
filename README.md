@@ -4,6 +4,9 @@
 
 Provides tokens for Dashery's autocomplete.
 
+## Usage
+Call the */tokens/autocomplete* endpoint to be given a JSON list of tokens with two attributes: category, and value.
+
 ## Deployment
 
 Standard Spring Boot deployment.  Requires the following properties to be present in the environment, whether via yml/properties file or environment variable:
