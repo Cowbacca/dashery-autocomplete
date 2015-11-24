@@ -1,5 +1,7 @@
 package uk.co.dashery;
 
+import com.google.gson.Gson;
+import com.google.gson.internal.LinkedTreeMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,7 +24,11 @@ public class DasheryAutocompleteApplication {
 
     @RequestMapping(value = "/tokens/json", method = RequestMethod.POST)
     public void createTokensFromJson(@RequestBody String json) {
-        System.out.println(json);
+        Gson gson = new Gson();
+        LinkedTreeMap linkedTreeMap = gson.fromJson(json, LinkedTreeMap.class);
+        for(Object entry :linkedTreeMap.values()){
+            System.out.println("Json: " + entry);
+        }
     }
 
     public static void main(String[] args) {
