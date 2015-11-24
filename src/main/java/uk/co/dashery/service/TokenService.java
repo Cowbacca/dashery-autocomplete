@@ -9,9 +9,12 @@ import java.util.List;
 public class TokenService {
     @Autowired
     private TokenRepository tokenRepository;
+    @Autowired
+    private TokenJsonParser tokenJsonParser;
 
     public void createFromJson(String json) {
-
+        List<Token> parsedTokens = tokenJsonParser.parse(json);
+        tokenRepository.insert(parsedTokens);
     }
 
     public List<Token> findAll() {
