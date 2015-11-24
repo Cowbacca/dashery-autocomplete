@@ -23,7 +23,6 @@ public class TokenServiceTest {
 
     @Mock
     private TokenRepository tokenRepository;
-
     @Mock
     private TokenJsonParser tokenJsonParser;
 

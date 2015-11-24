@@ -1,11 +1,13 @@
 package uk.co.dashery.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import uk.co.dashery.Token;
 import uk.co.dashery.TokenRepository;
 
 import java.util.List;
 
+@Service
 public class TokenService {
     @Autowired
     private TokenRepository tokenRepository;
