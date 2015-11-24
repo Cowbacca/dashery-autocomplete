@@ -34,11 +34,11 @@ public class TokenControllerTest {
 
     @Test
     public void testTokens() throws Exception {
-        List<Token> tokens = generateTokens();
+        List<Token> allTokens = generateTokens();
 
-        when(tokenService.findAll()).thenReturn(tokens);
+        when(tokenService.findAll()).thenReturn(allTokens);
 
-        assertThat(tokenController.tokens(), is(tokens));
+        assertThat(tokenController.tokens(), is(allTokens));
     }
 
     @Test
