@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertThat;
 
 
 public class TokenJsonParserTest {
@@ -27,8 +27,8 @@ public class TokenJsonParserTest {
 
     private Token generateToken(String key, String value) {
         Token token = new Token();
-        token.category= key;
-        token.value= value;
+        token.category = key;
+        token.value = value;
         return token;
     }
 }

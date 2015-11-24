@@ -15,8 +15,8 @@ public class TokenJsonParser {
         Gson gson = new Gson();
         List<Token> tokens = new ArrayList<>();
         LinkedHashMap[] tokenSets = gson.fromJson(json, LinkedHashMap[].class);
-        for(LinkedHashMap<String, String> tokenSet : tokenSets) {
-            for(Map.Entry<String, String> tokenEntry : tokenSet.entrySet()) {
+        for (LinkedHashMap<String, String> tokenSet : tokenSets) {
+            for (Map.Entry<String, String> tokenEntry : tokenSet.entrySet()) {
                 Token token = new Token();
                 token.category = tokenEntry.getKey();
                 token.value = tokenEntry.getValue();
