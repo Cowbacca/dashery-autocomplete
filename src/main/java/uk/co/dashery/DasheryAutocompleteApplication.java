@@ -30,7 +30,10 @@ public class DasheryAutocompleteApplication {
         for(LinkedTreeMap<String, Object> linkedTreeMap :linkedTreeMaps){
             for(Map.Entry<String, Object> entry : linkedTreeMap.entrySet()) {
                 if(entry.getKey() != null) {
-                    System.out.println(String.format("Key %s is %s", entry.getKey(), entry.getValue()));
+                    Token token = new Token();
+                    token.category = entry.getKey();
+                    token.value = entry.getValue().toString();
+                    tokenRepository.insert(token);
                 }
             }
 
