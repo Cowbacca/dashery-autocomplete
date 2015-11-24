@@ -25,9 +25,9 @@ public class DasheryAutocompleteApplication {
     @RequestMapping(value = "/tokens/json", method = RequestMethod.POST)
     public void createTokensFromJson(@RequestBody String json) {
         Gson gson = new Gson();
-        LinkedTreeMap linkedTreeMap = gson.fromJson(json, LinkedTreeMap.class);
-        for(Object entry :linkedTreeMap.values()){
-            System.out.println("Json: " + entry);
+        LinkedTreeMap[] linkedTreeMaps = gson.fromJson(json, LinkedTreeMap[].class);
+        for(LinkedTreeMap linkedTreeMap :linkedTreeMaps){
+            System.out.println("Json: " + linkedTreeMap);
         }
     }
 
