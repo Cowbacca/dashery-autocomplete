@@ -3,16 +3,9 @@ package uk.co.dashery;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-import org.springframework.web.filter.CorsFilter;
+import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 @SpringBootApplication
@@ -25,6 +18,11 @@ public class DasheryAutocompleteApplication {
     @RequestMapping(value = "/tokens/autocomplete", method = RequestMethod.GET)
     public List<Token> tokens() {
         return tokenRepository.findAll();
+    }
+
+    @RequestMapping(value = "/tokens/json", method = RequestMethod.POST)
+    public void createTokensFromJson(@RequestBody String json) {
+        System.out.println(json);
     }
 
     public static void main(String[] args) {
