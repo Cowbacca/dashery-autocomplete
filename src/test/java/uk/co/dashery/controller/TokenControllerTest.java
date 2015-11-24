@@ -16,6 +16,7 @@ import static org.junit.Assert.*;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
+import static uk.co.dashery.TokenTestUtils.generateTokens;
 
 public class TokenControllerTest {
 
@@ -38,15 +39,6 @@ public class TokenControllerTest {
         when(tokenService.findAll()).thenReturn(tokens);
 
         assertThat(tokenController.tokens(), is(tokens));
-    }
-
-    private List<Token> generateTokens() {
-        List<Token> tokens = new ArrayList<>();
-        Token token = new Token();
-        token.category="A Category";
-        token.value="A Value";
-        tokens.add(token);
-        return tokens;
     }
 
     @Test
