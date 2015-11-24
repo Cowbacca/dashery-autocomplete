@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
+import java.util.Map;
 
 @SpringBootApplication
 @RestController
@@ -26,8 +27,13 @@ public class DasheryAutocompleteApplication {
     public void createTokensFromJson(@RequestBody String json) {
         Gson gson = new Gson();
         LinkedTreeMap[] linkedTreeMaps = gson.fromJson(json, LinkedTreeMap[].class);
-        for(LinkedTreeMap linkedTreeMap :linkedTreeMaps){
-            System.out.println("Json: " + linkedTreeMap);
+        for(LinkedTreeMap<String, Object> linkedTreeMap :linkedTreeMaps){
+            for(Map.Entry<String, Object> entry : linkedTreeMap.entrySet()) {
+                if(entry.getKey() != null) {
+                    System.out.println(String.format("Key %s is %s", entry.getKey(), entry.getValue()));
+                }
+            }
+
         }
     }
 
