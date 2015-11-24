@@ -3,7 +3,7 @@ package uk.co.dashery.service;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import uk.co.dashery.Token;
+import uk.co.dashery.data.Token;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;

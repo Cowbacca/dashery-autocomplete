@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import uk.co.dashery.DasheryAutocompleteApplication;
-import uk.co.dashery.Token;
+import uk.co.dashery.data.Token;
 
 import java.util.ArrayList;
 import java.util.List;

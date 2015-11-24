@@ -1,6 +1,8 @@
 package uk.co.dashery;
 
 
+import uk.co.dashery.data.Token;
+
 import java.util.ArrayList;
 import java.util.List;
 

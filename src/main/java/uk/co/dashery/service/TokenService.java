@@ -2,8 +2,8 @@ package uk.co.dashery.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import uk.co.dashery.Token;
-import uk.co.dashery.TokenRepository;
+import uk.co.dashery.data.Token;
+import uk.co.dashery.repository.TokenRepository;
 
 import java.util.List;
 

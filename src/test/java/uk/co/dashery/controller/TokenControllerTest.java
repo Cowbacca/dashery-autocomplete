@@ -4,7 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import uk.co.dashery.Token;
+import uk.co.dashery.data.Token;
 import uk.co.dashery.service.TokenService;
 
 import java.util.List;
