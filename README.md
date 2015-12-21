@@ -1,11 +1,9 @@
-# Dashery Autocomplete
-
-[![Build Status](https://travis-ci.org/Cowbacca/dashery-autocomplete.svg?branch=master)](https://travis-ci.org/Cowbacca/dashery-autocomplete)
+# Dashery Autocomplete [![Build Status](https://travis-ci.org/Cowbacca/dashery-autocomplete.svg?branch=master)](https://travis-ci.org/Cowbacca/dashery-autocomplete) [![codecov.io](https://codecov.io/github/Cowbacca/dashery-autocomplete/coverage.svg?branch=master)](https://codecov.io/github/Cowbacca/dashery-autocomplete?branch=master)
 
 Provides tokens for Dashery's autocomplete.
 
 ## Usage
-GET the */tokens/autocomplete* endpoint to be given a JSON list of tokens with two attributes: category, and value.
+GET the */tokens/autocomplete* endpoint to be given a JSON list of tokens with one attribute: value.
 
 ## Deployment
 
