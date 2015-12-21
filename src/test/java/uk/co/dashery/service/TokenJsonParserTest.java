@@ -21,9 +21,7 @@ import static org.mockito.MockitoAnnotations.initMocks;
 @ContextConfiguration(classes = DasheryAutocompleteApplication.class)
 public class TokenJsonParserTest {
 
-    public static final String CATEGORY = "test key";
     public static final String VALUE = "test value";
-    public static final String ANOTHER_CATEGORY = "different key";
     public static final String ANOTHER_VALUE = "different value";
     @Autowired
     private TokenJsonParser tokenJsonParser;
@@ -37,8 +35,7 @@ public class TokenJsonParserTest {
     public void testParse() throws Exception {
         List<Token> expectedTokens = generateExpectedTokens();
 
-        String json = String.format("[{\"%s\": \"%s\"},{\"%s\": \"%s\"}]",
-                CATEGORY, VALUE, ANOTHER_CATEGORY, ANOTHER_VALUE);
+        String json = String.format("[{\"tags\": [\"%s\",\"%s\"]}]", VALUE, ANOTHER_VALUE);
 
         List<Token> parsedTokens = tokenJsonParser.parse(json);
 
@@ -47,15 +44,8 @@ public class TokenJsonParserTest {
 
     private List<Token> generateExpectedTokens() {
         List<Token> expectedTokens = new ArrayList<>();
-        expectedTokens.add(generateToken(CATEGORY, VALUE));
-        expectedTokens.add(generateToken(ANOTHER_CATEGORY, ANOTHER_VALUE));
+        expectedTokens.add(new Token(VALUE));
+        expectedTokens.add(new Token(ANOTHER_VALUE));
         return expectedTokens;
-    }
-
-    private Token generateToken(String key, String value) {
-        Token token = new Token();
-        token.category = key;
-        token.value = value;
-        return token;
     }
 }

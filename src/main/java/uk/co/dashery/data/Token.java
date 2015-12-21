@@ -6,8 +6,14 @@ public class Token {
 
     @Id
     private String id;
-    public String category;
-    public String value;
+    private String value;
+
+    public Token() {
+    }
+
+    public Token(String value) {
+        this.value = value;
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -16,17 +22,12 @@ public class Token {
 
         Token token = (Token) o;
 
-        if (id != null ? !id.equals(token.id) : token.id != null) return false;
-        if (category != null ? !category.equals(token.category) : token.category != null) return false;
         return !(value != null ? !value.equals(token.value) : token.value != null);
 
     }
 
     @Override
     public int hashCode() {
-        int result = id != null ? id.hashCode() : 0;
-        result = 31 * result + (category != null ? category.hashCode() : 0);
-        result = 31 * result + (value != null ? value.hashCode() : 0);
-        return result;
+        return value != null ? value.hashCode() : 0;
     }
 }
