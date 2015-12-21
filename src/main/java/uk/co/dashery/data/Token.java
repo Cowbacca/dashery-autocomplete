@@ -8,20 +8,12 @@ public class Token {
     @JsonIgnore
     @Id
     private String id;
-    private String value;
+    public String value;
 
     public Token() {
     }
 
     public Token(String value) {
-        this.value = value;
-    }
-
-    public String getValue() {
-        return value;
-    }
-
-    public void setValue(String value) {
         this.value = value;
     }
 
