@@ -1,13 +1,10 @@
 package uk.co.dashery.data;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.Id;
 
 public class Token {
 
-    @JsonIgnore
     @Id
-    private String id;
     public String value;
 
     public Token() {
