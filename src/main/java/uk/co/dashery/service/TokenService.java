@@ -16,7 +16,7 @@ public class TokenService {
 
     public void createFromJson(String json) {
         List<Token> parsedTokens = tokenJsonParser.parse(json);
-        tokenRepository.insert(parsedTokens);
+        tokenRepository.save(parsedTokens);
     }
 
     public List<Token> findAll() {

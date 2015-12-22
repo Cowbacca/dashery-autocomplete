@@ -41,7 +41,7 @@ public class TokenServiceTest {
 
         tokenService.createFromJson("test");
 
-        verify(tokenRepository).insert(parsedTokens);
+        verify(tokenRepository).save(parsedTokens);
 
     }
 
