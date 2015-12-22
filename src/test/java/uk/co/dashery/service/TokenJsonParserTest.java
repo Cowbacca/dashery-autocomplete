@@ -3,12 +3,12 @@ package uk.co.dashery.service;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import uk.co.dashery.DasheryAutocompleteApplication;
 import uk.co.dashery.data.Token;
 
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -24,7 +24,7 @@ public class TokenJsonParserTest {
 
     public static final String VALUE = "test value";
     public static final String ANOTHER_VALUE = "different value";
-    @Autowired
+    @Inject
     private TokenJsonParser tokenJsonParser;
 
     @Before

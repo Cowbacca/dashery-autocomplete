@@ -3,11 +3,12 @@ package uk.co.dashery.controller;
 import org.junit.After;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import uk.co.dashery.TestDasheryAutocompleteConfig;
+
+import javax.inject.Inject;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -17,10 +18,10 @@ import static uk.co.dashery.TokenTestUtils.getTestJson;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = TestDasheryAutocompleteConfig.class)
 public class TokenControllerIT {
-    @Autowired
+    @Inject
     private MongoTemplate mongoTemplate;
 
-    @Autowired
+    @Inject
     private TokenController tokenController;
 
     @After

@@ -1,16 +1,16 @@
 package uk.co.dashery.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import uk.co.dashery.data.Token;
 import uk.co.dashery.service.TokenService;
 
+import javax.inject.Inject;
 import java.util.List;
 
 @RestController
 public class TokenController {
 
-    @Autowired
+    @Inject
     private TokenService tokenService;
 
     @CrossOrigin
