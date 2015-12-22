@@ -15,6 +15,7 @@ import java.util.List;
 import static org.hamcrest.Matchers.is;
 import static org.junit.Assert.assertThat;
 import static org.mockito.MockitoAnnotations.initMocks;
+import static uk.co.dashery.TokenTestUtils.getTestJson;
 
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -35,7 +36,7 @@ public class TokenJsonParserTest {
     public void testParse() throws Exception {
         List<Token> expectedTokens = generateExpectedTokens();
 
-        String json = String.format("[{\"tags\": [\"%s\",\"%s\"]}]", VALUE, ANOTHER_VALUE);
+        String json = getTestJson(VALUE, ANOTHER_VALUE);
 
         List<Token> parsedTokens = tokenJsonParser.parse(json);
 
