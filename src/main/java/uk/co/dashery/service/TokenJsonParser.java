@@ -1,10 +1,10 @@
 package uk.co.dashery.service;
 
 import com.google.gson.Gson;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import uk.co.dashery.data.Token;
 
+import javax.inject.Inject;
 import java.util.Arrays;
 import java.util.LinkedHashMap;
 import java.util.List;
@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 @Component
 public class TokenJsonParser {
 
-    @Autowired
+    @Inject
     private Gson gson;
 
     public List<Token> parse(String json) {
