@@ -1,5 +1,6 @@
 package uk.co.dashery.service;
 
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import uk.co.dashery.data.Token;
 import uk.co.dashery.repository.TokenRepository;
@@ -14,6 +15,7 @@ public class TokenService {
     @Inject
     private TokenJsonParser tokenJsonParser;
 
+    @Async
     public void createFromJson(String json) {
         List<Token> parsedTokens = tokenJsonParser.parse(json);
         tokenRepository.save(parsedTokens);
